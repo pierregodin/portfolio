@@ -75,7 +75,7 @@ h1 {
   margin: none;
 }
 
-.wrapper {
+.hero_section {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: auto;
