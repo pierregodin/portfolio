@@ -3,9 +3,9 @@ window.onload = () => {
     var burger = document.getElementById('nav-icon3');
     var mobile_menu = document.getElementById('top_links');
     var dark_button = document.getElementById('darkmode');
-    var jourNuit = document.getElementById('jourNuit');
-    var jour = 'media/jour.png';
-    var nuit = 'media/nuit.png';
+    // var jourNuit = document.getElementById('jourNuit');
+    // var jour = 'media/jour.png';
+    // var nuit = 'media/nuit.png';
     // jourNuit.src = jour;
 
     document.documentElement.setAttribute('data-theme', 'light');
@@ -22,10 +22,10 @@ window.onload = () => {
         var theme = document.documentElement.getAttribute('data-theme');
             if (theme === 'light') {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                jourNuit.src = nuit;
+                // jourNuit.src = nuit;
             } else if (theme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'light');
-                jourNuit.src = jour;
+                // jourNuit.src = jour;
             }
         window.setTimeout(function() {
             document.documentElement.classList.remove('color-theme-in-transition')
