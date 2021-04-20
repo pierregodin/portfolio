@@ -10,6 +10,7 @@
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 
   /* Colors */
@@ -19,10 +20,10 @@ html {
   --black: #000000;
 
   /* Font sizes */
-  --big: 80px;
-  --mid: 60px;
-  --title: 35px;
-  --normal: 16px;
+  --big: 5rem;
+  --mid: 3.75rem;
+  --title: 2.1875rem;
+  --normal: 1rem;
 }
 
 html[data-theme='light'] {
@@ -77,18 +78,17 @@ h1 {
 
 .hero_section {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-auto-rows: auto;
-  align-items: center;
+  /* align-items: center; */
   padding: 0;
-  margin-top: 80px;
-  height: auto;
+  height: 100vh;
   overflow-x: hidden;
 }
 
 .navbar {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   grid-auto-rows: auto;
   align-items: center;
   padding: 0px;
@@ -99,6 +99,7 @@ h1 {
   top: 0px;  
   background: var(--background);
   grid-area: navbar;
+  z-index: 1001;
 }
 
 #top_name {
@@ -150,35 +151,49 @@ h1 {
   color: var(--text);
   font-size: var(--big);
   grid-column: 2 / 4;
-  margin-top: 80px;
-  margin-bottom: 0;
+  height: fit-content;
   font-weight: 800;
+  position: relative;
+  top: 10rem;
+  margin-top: 7rem;
 }
 
 .mid_text {
   color: var(--text);
   font-size: var(--mid);
   grid-column: 2 / 4;
+  height: fit-content;
   font-weight: 400;
+  margin-top: 5rem;
 }
 
 /* Photo accueil */
 
 #pierrePic {
-  grid-column: 5 / 6;
-  margin: 3em 0em;
-}
-
-#pierrePic > img {
   z-index: 1000;
+  grid-column: 5 / 6;
+  position: relative;
+  bottom: 7rem;
+  height: 27em;
   width: 25em;
-  border: solid 20px white;
-  border-bottom: solid 60px white;
+  margin-left: -8vw;
+  background-image: url(media/moi_borde.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
   transform: rotateZ(10deg);
   transition: all 100ms cubic-bezier(0.490, 0.295, 0.355, 0.785); 
 }
 
-#pierrePic > img:hover {
+#pierrePic > img {
+  z-index: 1000;
+  width: 100%;
+  /* border: solid 20px white;
+  border-bottom: solid 3.75rem white; */
+  transform: rotateZ(10deg);
+  transition: all 100ms cubic-bezier(0.490, 0.295, 0.355, 0.785); 
+}
+
+#pierrePic:hover {
   transform: rotateZ(8deg) translateY(-0.5em) translateX(-0.3em);
   box-shadow: 14px 14px 20px -15px rgba(143, 143, 143, 0.75);
   -webkit-box-shadow: 14px 14px 20px -15px rgba(143, 143, 143,0.75);
@@ -356,11 +371,16 @@ h1 {
   }
 
 @media (max-width: 1250px) {
-  /* .wrapper {grid-template-columns: repeat(4, 1fr);}
-  .navbar {grid-template-columns: repeat(4, 1fr);} */
+  html {
+    --big: 4rem;
+    --mid: 2.75rem;
+    --title: 2.1875rem;
+    --normal: 1rem;
+  }
   #top_name {grid-column: 1 / 3;}
   #top_links {grid-column: 4 / 7;}
-  .mid_text {grid-column: 2 / 6;}
+  #pierrePic { height: 22em;
+                width: 20em;}
 }
 
 @media (max-width: 850px) {
@@ -372,27 +392,54 @@ h1 {
   #top_name {grid-column: 1 / 4;}
   #top_links 
   {    
-      grid-column: 1 / 7;
-      /* display: none; */
-      position: fixed;
-      background: var(--green);
-      height: min-content;
-      top: 80px;
-      left: 700px;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-      margin: 0;
-      padding: 10% 0px;
-      transition: all 300ms ease;
+    grid-column: 1 / 7;
+    /* display: none; */
+    position: fixed;
+    background: var(--green);
+    height: calc(100vh - 80px);
+    top: 80px;
+    left: 700px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0;
+    transition: all 300ms ease;
+  }
+  .nav_links {
+    margin: 3vh;
   }
   .nav_links a {
-      transition: all 100ms cubic-bezier(0.490, 0.295, 0.355, 0.785); 
-      color: var(--black);
+    transition: all 100ms cubic-bezier(0.490, 0.295, 0.355, 0.785); 
+    color: var(--white);
+    font-size: var(--big);
   }
-  
   .nav_links a:hover {
-  color: var(--dark-grey);
+    color: var(--dark-grey);
   }
-  #nav-icon3 {display: block;}
+  #nav-icon3 {
+    display: block;
+  }
+  #pierrePic {
+    grid-row: 3;
+    grid-column: 3 / 5;
+    position: relative;
+    bottom: 4rem;
+    place-self: center;
+    height: 19.8em;
+    width: 18em;
+    margin-left: 0;
+  }
+  .big_text {
+    grid-row: 1;
+    grid-column: 2 / 6;
+    margin-top: inherit;
+  }
+  .mid_text {
+    position: relative;
+    top: 3rem;
+    grid-row: 2;
+    grid-column: 2 / 6;
+    margin-top: inherit;
+  }
 }

@@ -3,6 +3,7 @@ window.onload = () => {
     var burger = document.getElementById('nav-icon3');
     var mobile_menu = document.getElementById('top_links');
     var dark_button = document.getElementById('darkmode');
+    var linksClicked = document.getElementsByClassName('nav_links');
     // var jourNuit = document.getElementById('jourNuit');
     // var jour = 'media/jour.png';
     // var nuit = 'media/nuit.png';
@@ -15,6 +16,15 @@ window.onload = () => {
         burger.classList.toggle('open');
         mobile_menu.classList.toggle('display_flex');
     };
+
+    var closeBurger = () => {
+        burger.classList.toggle('open');
+        mobile_menu.classList.toggle('display_flex');
+    };
+    
+    for (var i = 0; i < linksClicked.length; i++) {
+        linksClicked[i].addEventListener('click', closeBurger, false);
+    }
 
     /* Dark Mode */
     dark_button.onclick = () => {
