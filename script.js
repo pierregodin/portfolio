@@ -1,5 +1,6 @@
 window.onload = () => {
-    
+
+    //vars
     var burger = document.getElementById('nav-icon3');
     var mobile_menu = document.getElementById('top_links');
     var dark_button = document.getElementById('darkmode');
@@ -8,6 +9,15 @@ window.onload = () => {
     // var jour = 'media/jour.png';
     // var nuit = 'media/nuit.png';
     // jourNuit.src = jour;
+
+    //Screen resize for mobile
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    window.addEventListener('resize', () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      });
 
     document.documentElement.setAttribute('data-theme', 'light');
 
