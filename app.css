@@ -461,7 +461,7 @@ h1 {
     grid-row: 3;
     grid-column: 3 / 5;
     position: relative;
-    bottom: 5rem;
+    bottom: 10vh;
     place-self: center;
     height: 15em;
     width: 14em;
