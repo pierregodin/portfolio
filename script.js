@@ -51,4 +51,15 @@ window.onload = () => {
             document.documentElement.classList.remove('color-theme-in-transition')
         }, 1000);
     }
+
+    /* Scroll effects */
+    ScrollReveal().reveal('.big_text');
+    ScrollReveal().reveal('.mid_text', { delay: 500, reset: true });
+    ScrollReveal().reveal('.small_text', { delay: 200, reset: true  });
+    ScrollReveal().reveal('.appear1', { delay: 700 });
+    ScrollReveal().reveal('.appear2', { delay: 1200 });
+    ScrollReveal().reveal('.appear3', { delay: 1700 });
+    ScrollReveal().reveal('.mini_text', { delay: 2200 });
+    ScrollReveal().reveal('#ballShadow');
+
 };

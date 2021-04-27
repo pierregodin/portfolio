@@ -1,0 +1,139 @@
+*{
+    user-select:none;
+  }
+  #loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding-top: 35vh;
+    font-size: 2rem;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgb(255, 255, 255);
+    color: rgb(114, 114, 114);
+    text-align: center;
+    transition:500ms;
+  }
+  
+  #game-div {
+    opacity:0;
+    width: 100%;
+    height: 85vh;
+    min-height:200px;
+    display: block;
+    border-radius: 25px;
+    background: #eee;
+    position: relative;
+  }
+  
+  #ball {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    z-index: 10;
+    overflow:hidden;
+  }
+  #innerBall {
+    background-image: url("https://uploads.codesandbox.io/uploads/user/13607509-c76d-4fea-90a1-26c8d14dc896/aMz1-football.png");
+    bottom:0;
+    left:0;
+    position:absolute;
+    width:100%;
+    height:100%;
+  }
+  #ballShadow {
+    background: rgba(102, 102, 102, 0.562);
+    position: absolute;
+    transform: translate(-50%, 50%);
+    border-radius: 100%;
+    height: 10px;
+    bottom: 0;
+  }
+  
+  body {
+    overflow: hidden;
+    padding: 0rem;
+    margin:2rem;
+    font-family: "Dosis", sans-serif;
+    color: rgb(185, 185, 185);
+  }
+  
+  #scoreBoard,
+  #recordBoard,
+  .recordBoard-behind {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    cursor: default;
+  }
+  
+  #recordBoard.transitrec {
+    transition: color 0.6s, text-shadow 0.6s;
+  }
+  
+  #scoreBoard {
+    z-index: 8;
+    transition: opacity 0.3s;
+  }
+  
+  #scoreBoard::selection,
+  #recordBoard::selection {
+    background: transparent;
+  }
+  
+  #recordBoard,
+  #recnum {
+    transition:800ms;
+    font-size: 200px;
+    color: rgb(185, 185, 185);
+    transform: translate(-50%, -50%);
+  }
+  
+  #recordBoard.recordmode {
+    color: rgb(255, 184, 52);
+    text-shadow: 0px 0px 20px rgb(255, 218, 52);
+  }
+  
+  .recordBoard-behind {
+    animation: afterrecord 800ms ease-out;
+    opacity: 0;
+    transform:translate(-50%, -10%);
+  }
+  
+  #scoreBoard.scorerecordmode {
+    opacity: 0;
+  }
+  
+  @keyframes afterrecord {
+    0% {
+      transform: translate(-50%, 10%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, 10%) scale(5);
+      opacity: 0;
+      color:white;
+    }
+  }
+  
+  
+  #scoreBoard, .recordBoard-behind {
+    font-size: 50px;
+    transform: translate(-50%, 10%);
+    color: rgb(85, 85, 85);
+  }
+  
+  .how{
+    text-align:center;
+    display:block;
+    color:black;
+    font-size:1.5rem;
+  }

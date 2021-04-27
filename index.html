@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html class="sr" lang="fr">
     <head>
         <link rel="stylesheet" href="app.css"/>
         <script src="script.js"></script>
+        <script src="foot.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
     </head>
     <body class='wrapper'>
             <nav class="navbar">
-                <div id="top_name"><a href="#accueil">PIERRE</a></div>
+                <div id="top_name"><a href="#accueil_section">PIERRE</a></div>
                 <div id="nav-icon3">
                     <span></span>
                     <span></span>
@@ -15,15 +17,15 @@
                     <span></span>
                 </div>
                 <ul id="top_links">
-                    <li id="accueil" class="nav_links"><a href="#accueil_section">Accueil</a></li>
-                    <li id="a_propos" class="nav_links"><a href="#a_propos_section">A propos</a></li>
-                    <li id="creations" class="nav_links"><a href="#creations_section">Cr&eacute;ations</a></li>
-                    <li id="contact" class="nav_links"><a href="#contact_section">Contact</a></li>
+                    <li id="accueil" class="nav_links" ><a href="#accueil_section">Accueil</a></li>
+                    <li id="a_propos" class="nav_links" ><a href="#a_propos_section">A propos</a></li>
+                    <li id="creations" class="nav_links" ><a href="#creations_section">Cr&eacute;ations</a></li>
+                    <li id="contact" class="nav_links" ><a href="#contact_section">Contact</a></li>
                 </ul>
             </nav>
             <div id="accueil_section" class="section">
-                <h1 class="big_text">Hello &#128075;</h1>
-                <h2 class="mid_text">Bienvenue sur mon portfolio !</h2>
+                <h1 class="big_text load-hidden">Hello &#128075;</h1>
+                <h2 class="mid_text load-hidden">Bienvenue sur mon portfolio !</h2>
 
                 <label id="pierrePic">
                     <!-- <img src="media/moi_borde.png" alt="C'etait ma photo oups"></img> -->
@@ -39,13 +41,24 @@
             </div>
 
             <div id="a_propos_section" class="section">
-                <p id="par1page2" class="small_text">Moi c’est <b>Pierre Godin</b>, <br>je suis un passionné de design et de création en tout genre. <br>Mon objectif c’est de rendre le web :</p>
-                <p id="par2page2" class="plus_text"><b>plus</b> simple,<br><b>plus</b> fluide et <br><b>plus</b> pratique.</p>
-                <p id="pluscool" class="mini_text">et plus cool aussi 😎</p>
-                <!-- <label id="smiley_mole"> -->
-                    <span id="hole"></span>
-                <!-- </label> -->
-                <p id="par3page2" class="small_text">Je fais aussi du développement Front-End, <br>et je suis Community Manager pour le festival The N’JOY. <br>En plus simple, j’aime toucher à tous les domaines du web et du digital 👀.</p>
+                <p id="par1page2" class="small_text load-hidden">Moi c’est <b>Pierre Godin</b>, <br>un passionné de design, de création, et de quelque chose d'autre (je vous laisse deviner) <br>Mon objectif c’est de rendre le web :</p>
+                <p id="par2page2" class="plus_text load-hidden">
+                    <span class="appear1"><b>plus</b> simple,<br></span>
+                    <span class="appear2"><b>plus</b> fluide et <br></span>
+                    <span class="appear3"><b>plus</b> pratique.</span>
+                    <span id="pluscool" class="mini_text load-hidden">et plus cool aussi 😎</span>
+                </p>
+                <p id="par3page2" class="small_text load-hidden">Je fais aussi du développement Front-End, <br>et je suis Community Manager pour le festival The N’JOY. <br>En plus simple, j’aime toucher à tous les domaines du web et du digital 👀.</p>
+                <div id="game-container">
+                    <div id="game-div">
+                        <div id="ballShadow" style=" width: 45px; height: 15px; filter:blur(2px);"></div>
+                        <div id="recordBoard"></div>
+                        <div id="scoreBoard"></div>
+                        <div id="ball">
+                        <div id="innerBall" ></div>
+                        </div>
+                    </div>
+                </div>
             </div>
     </body>
 </html>
