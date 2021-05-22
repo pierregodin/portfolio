@@ -25,8 +25,8 @@ html {
 
   /* Font sizes */
   --big: 5rem;
-  --mid: 3.75rem;
-  --plus: 3.2rem;
+  --mid: 3.2rem;
+  --plus: 3rem;
   --title: 2.1875rem;
   --normal: 1.5rem;
   --mini: 1rem;
@@ -163,7 +163,6 @@ h1 {
   height: fit-content;
   position: relative;
   grid-column: 2 / 4;
-  top: 10rem;
   margin-top: 7rem;
 }
 
@@ -192,7 +191,7 @@ h1 {
   height: fit-content;
   position: relative;
   margin: 0;
-  top: 5rem;
+  top: 4rem;
 }
 
 .mini_text {
@@ -204,18 +203,24 @@ h1 {
   /* top: 5rem; */
 }
 
-#par1page2 {
-  top: 10rem;
-  grid-row: 1;
+.top10 {
+  top: 8rem;
 }
 
-#par2page2 {
-  grid-row: 2;
+.row1 {
+  grid-row: 1; 
+}
+
+.row2 {
+  grid-row: 2; 
+}
+
+.row3 {
+  grid-row: 3; 
+}
+
+.col2-7 {
   grid-column: 2 / 7;
-}
-
-#par3page2 {
-  grid-row: 3;  
 }
 
 #pluscool {
